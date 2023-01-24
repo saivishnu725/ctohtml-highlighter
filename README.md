@@ -1,6 +1,18 @@
 # ctohtml-highlighter
 a syntax highlighter which creates a html code with C code syntax highlighted
 
+## current stage
+Pre Alpha Release
+
+<pre style="font-size:0.8em">
+Pre Alpha Release - not even started anything to make sense of it.
+Alpha Release - some things are kinda working but don't really expect any output
+Borderline Alpha Release - most of the things are pretty much working
+Beta Release - uhmm.. works are not works depends on the mood
+Normal Release - removed some wrong things so it kinda mostly works
+Debug/Making Sense Release - pretty good done. removing/ improving/ fixing everything.
+Release Release - finally done. v1.0 will be released here.
+</pre>
 
 ## todo
 1. highlight C code (duh)
@@ -20,6 +32,24 @@ a syntax highlighter which creates a html code with C code syntax highlighted
 2. use a div box for the entire block
 3. use the idea behind infix to postfix expression conversion (stacks) for everything
 4. somehow use a two layer stack to both maintain the order/position as well as the type of each token  
+
+## uhmm
+1. resizable stack to save every token and another stack of the same size to store the type of the token.
+2. open file and read each line
+3. func to check keywords
+4. func to check operators
+5. func to check for variables and find all previously defined variables
+6. func to check for user defined functions and find all previously defined functions
+7. func to check for library functions before declaring them as user variables
+8. a way to check for error and mark them in red (if possible/ optional ig)
+.
+.
+.
+n. create a html file
+n+1. create a internal CSS for them all
+n+2. use data from 2nd stack to form first stack tokens
+n+3. light mode, dark mode(default) output  (if possible/ optional ig)
+n+4. parameterized program to show which libraries are used or to show the included header files so that their functions can be color coded. (if possible/ optional ig)
 
 ## License
 
