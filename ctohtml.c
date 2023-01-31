@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "cparser.h"
+#include "cparser.c"
 
 int main()
 {
