@@ -17,7 +17,7 @@ int main()
     char *code = malloc(1000);
     strcat(code, "int main()\n{\n\tprintf( \"Hello world!!\" );\n\treturn 0;\n}");
     // strcat(code, "int main()\n{\n\tint a = 5;\n\tfloat b = 3.14;\n\tchar c = 'x';\n\tchar str[] = \"Hello, world!\";\n\n\tif (a > b) {\n\t\tprintf(\"%s\\n\", str);\n\t}\n\n\treturn 0;\n}");
-    printToken(code);
+    printTokens(code);
     printf("done");
     return 0;
 }
