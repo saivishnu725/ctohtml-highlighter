@@ -5,3 +5,5 @@
 .vscode/*
 .gitignore
 *.exe
+.try/
+files.c
