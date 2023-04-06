@@ -4,7 +4,7 @@ a syntax highlighter which creates a html code with C code syntax highlighted
 ## current stage
 Pre Alpha Release
 
-<pre style="font-size:0.8em">
+<!-- <pre style="font-size:0.8em">
 Pre Alpha Release - not even started anything to make sense of it.
 Alpha Release - some things are kinda working but don't really expect any output
 Borderline Alpha Release - most of the things are pretty much working
@@ -12,7 +12,7 @@ Beta Release - uhmm.. works are not works depends on the mood
 Normal Release - removed some wrong things so it kinda mostly works
 Debug/Making Sense Release - pretty good done. removing/ improving/ fixing everything
 Release Release - finally done. v1.0 will be released here
-</pre>
+</pre> -->
 
 ## todo
 1. highlight C code (duh)
