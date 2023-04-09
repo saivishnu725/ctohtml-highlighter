@@ -38,6 +38,24 @@ int isKeyword(char *str)
     return 0;
 }
 
+int TokenFound(enum TokenType s)
+{
+    switch (s)
+    {
+    case KEYWORD:
+    case INTEGER:
+    case FLOAT:
+    case STRING:
+    case CHAR:
+    case OPERATOR:
+    case PUNCTUATOR:
+    case IDENTIFIER:
+        return 1;
+    default:
+        return 0;
+    }
+}
+
 struct Token checkTokenType(char *str)
 {
     struct Token token = {0};
@@ -147,57 +165,66 @@ void printTokens(char *code)
     fprintf(f, ".char { color: green; }\n");
     fprintf(f, ".operator { color: black; }\n");
     fprintf(f, ".punctuator { color: black; }\n");
+    // fprintf(f, ".identifier { color: blue; }\n");
     fprintf(f, "</style>\n</head>\n<body> <pre>\n");
     while (*code != '\0')
     {
         token = checkTokenType(code);
         code += strlen(token.value);
-        if (token.type == KEYWORD)
-        {
-            fprintf(f, "<span class=\"keyword\">");
-            fprintf(f, token.value);
-            fprintf(f, "</span>");
-        }
-        else if (token.type == INTEGER)
-        {
-            fprintf(f, "<span class=\"integer\">");
-            fprintf(f, token.value);
-            fprintf(f, "</span>");
-        }
-        else if (token.type == FLOAT)
-        {
-            fprintf(f, "<span class=\"float\">");
-            fprintf(f, token.value);
-            fprintf(f, "</span>");
-        }
-        else if (token.type == STRING)
-        {
-            fprintf(f, "<span class=\"string\">");
-            fprintf(f, token.value);
-            fprintf(f, "</span>");
-        }
-        else if (token.type == CHAR)
-        {
-            fprintf(f, "<span class=\"char\">");
-            fprintf(f, token.value);
-            fprintf(f, "</span>");
-        }
-        else if (token.type == OPERATOR)
-        {
-            fprintf(f, "<span class=\"operator\">");
-            fprintf(f, token.value);
-            fprintf(f, "</span>");
-        }
-        else if (token.type == PUNCTUATOR)
-        {
-            fprintf(f, "<span class=\"punctuator\">");
-            fprintf(f, token.value);
-            fprintf(f, "</span>");
-        }
-        else
-        {
-            fprintf(f, token.value);
-        }
+        // if (TokenFound(token.type))
+        // {
+            if (token.type == KEYWORD)
+            {
+                fprintf(f, "<span class=\"keyword\">");
+                fprintf(f, token.value);
+                fprintf(f, "</span>");
+            }
+            else if (token.type == INTEGER)
+            {
+                fprintf(f, "<span class=\"integer\">");
+                fprintf(f, token.value);
+                fprintf(f, "</span>");
+            }
+            else if (token.type == FLOAT)
+            {
+                fprintf(f, "<span class=\"float\">");
+                fprintf(f, token.value);
+                fprintf(f, "</span>");
+            }
+            else if (token.type == STRING)
+            {
+                fprintf(f, "<span class=\"string\">");
+                fprintf(f, token.value);
+                fprintf(f, "</span>");
+            }
+            else if (token.type == CHAR)
+            {
+                fprintf(f, "<span class=\"char\">");
+                fprintf(f, token.value);
+                fprintf(f, "</span>");
+            }
+            else if (token.type == OPERATOR)
+            {
+                fprintf(f, "<span class=\"operator\">");
+                fprintf(f, token.value);
+                fprintf(f, "</span>");
+            }
+            else if (token.type == PUNCTUATOR)
+            {
+                fprintf(f, "<span class=\"punctuator\">");
+                fprintf(f, token.value);
+                fprintf(f, "</span>");
+            }
+            else
+            {
+                // printf("%d\n", TokenFound(token.value));
+                fprintf(f, token.value);
+            }
+        // }
+        // if (TokenFound(token.type))
+        //     // fprintf(f, "<span class=\"%s\"> %c </span>", token.type, token.value); // for single char        Such a big flop, this idea... apparently we cant just print enum values -_-
+        // else
+        //     fprintf(f, token.value);
     }
     fprintf(f, "\n </pre> </body>\n</html>");
     fclose(f);
